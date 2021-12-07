@@ -12,5 +12,7 @@
 
 - go test run test
 
+# author 
+- https://viblo.asia/p/series-golang3-tang-toc-golang-struct-pointer-receiver-interface-ORNZqp63K0n
 # content 
 

@@ -73,8 +73,6 @@ func test_struct(){
 }
 
 
-
-
 func test_map() {
 
 	person_age := map[string]int {   // var person_age := err
@@ -156,10 +154,15 @@ func test_interface(){
 }
 
 
+// ============================================ //
+// =======Concurrency, Goroutines, Channels=====//
+// Parallel sẽ xử lí nhiều tác vụ cùng một thời điểm
+// Concurrency sẽ xử lí nhiều tác vụ một lần   -> can Mutexes, Semaphores, Locks. -> golang : Goroutines 
+
 
 func main() {
 	// test_map()
 	// test_pointer()
 	// test_struct()
-	test_interface()
+	// test_interface()
 }
