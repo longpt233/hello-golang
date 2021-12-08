@@ -158,6 +158,8 @@ func test_interface(){
 // =======Concurrency, Goroutines, Channels=====//
 // Parallel sẽ xử lí nhiều tác vụ cùng một thời điểm
 // Concurrency sẽ xử lí nhiều tác vụ một lần   -> can Mutexes, Semaphores, Locks. -> golang : Goroutines 
+// concurency : go -> create goroutines
+// giao tiep goroutines = channel : chi 1 goroutines truy suat vao data 
 
 
 func main() {
