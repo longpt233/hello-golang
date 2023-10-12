@@ -17,7 +17,6 @@ func doSomething(ctx context.Context) {
 	go doAnother(ctx, printCh)
 
 	for num := 1; num <= 3; num++ {
-
 		go func(num int) {
 			fmt.Printf("gui vao kenh %v \n", num)
 			printCh <- num
