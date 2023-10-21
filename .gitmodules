@@ -1,0 +1,6 @@
+[submodule "go-grpc/lib/proto"]
+	path = go-grpc/lib/proto
+	url = git@github.com:longpt233/proto-go-grpc.git
+[submodule "go-grpc/external/proto"]
+	path = go-grpc/external/proto
+	url = git@github.com:longpt233/proto-go-grpc.git
