@@ -7,6 +7,10 @@ import (
 	"github.com/longpt233/greetings"
 )
 
+func test() {
+	fmt.Println("hello long")
+}
+
 func main() {
 	// Set properties of the predefined Logger, including
 	// the log entry prefix and a flag to disable printing
