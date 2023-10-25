@@ -1,4 +1,4 @@
-module github.com/longpt233/hello
+module github.com/longpt233/hello-golang/go-module/hello
 
 go 1.19
 
