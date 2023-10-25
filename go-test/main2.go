@@ -1,5 +1,5 @@
 package main
 
 func main() {
-	hello.test()
+	abc.test()
 }

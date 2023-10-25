@@ -1,1 +1,7 @@
-package gomodule2
+package gomd
+
+import "fmt"
+
+func test() {
+	fmt.Println("hellp go md")
+}

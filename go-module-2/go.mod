@@ -1,3 +1,3 @@
-module github.com/longpt233/hello-golang/go-module-2
+module github.com/longpt233/hello-golang/gomd
 
 go 1.19
