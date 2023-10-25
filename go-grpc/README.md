@@ -7,11 +7,14 @@ go get -u google.golang.org/grpc
 
 
 git submodule add git@github.com:longpt233/proto-go-grpc.git ./external/proto
+hình như là phải push được submodule lên ->  module chính pull về ->  module chính push lên thì mới nhận
+
+protoc external/proto/user.proto --go_out=.
+protoc external/proto/user.proto --go-grpc_out=.
 ```
 
 old
-```
-go mod init auth-service
+``` 
 go get -u github.com/golang/protobuf/protoc-gen-go    # sudo snap install protobuf --classic
 go get -u google.golang.org/grpc    
 
