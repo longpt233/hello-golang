@@ -1,4 +1,4 @@
-module longpt233/test
+module longpt233/remote-pack
 
 go 1.19
 

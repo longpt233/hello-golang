@@ -3,11 +3,15 @@
 ```
 go get -u github.com/golang/protobuf/protoc-gen-go
 go get -u google.golang.org/grpc
+```
+- submodule
 
-
-
+```
 git submodule add git@github.com:longpt233/proto-go-grpc.git ./external/proto
 hình như là phải push được submodule lên ->  module chính pull về ->  module chính push lên thì mới nhận
+```
+
+```
 
 protoc external/proto/user.proto --go_out=.
 protoc external/proto/user.proto --go-grpc_out=.

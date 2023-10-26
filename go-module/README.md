@@ -58,3 +58,28 @@ drwxrwxr-x 4 long long     4096 Thg 6   6  2022 ../
 # sửa đổi thư mục instal 
 go env -w GOBIN=/path/to/your/bin
 ```
+
+
+# go path 
+
+- go root là cái path chạy go ấy 
+```
+long@hello:~/Documents/vccorp/hello-golang/go-test$ which go
+/usr/local/go/bin/go
+```
+
+- go path là nơi mấy cái package tải về
+
+```
+long@hello:~/Documents/vccorp/hello-golang/go-module$ go env
+...
+GOOS="linux"
+GOPATH="/home/long/go"
+GOPRIVATE=""
+GOPROXY="https://proxy.golang.org,direct"
+GOROOT="/usr/local/go"
+...
+```
+
+- có thể để prj ở đâu cx được khi get github.com/longpt233/gopkg nó đều dùng được (không nhất thiết phải để proj trong go path)
+- nếu nó lỗi k nhận thì tốt nhất k mod init lại 
