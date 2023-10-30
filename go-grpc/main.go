@@ -1,44 +1,31 @@
 package main
 
 import (
-	"fmt"
-	"sync"
+	"context"
+	"log"
+	"net"
+
+	"google.golang.org/grpc"
 )
 
+type HelloServiceImpl struct{}
+
+func (p *HelloServiceImpl) SayHello(ctx context.Context, args *HelloMessage) (*HelloMessage, error) {
+	reply := &HelloMessage{Value: "hello:" + args.GetValue()}
+	return reply, nil
+}
+
 func main() {
-	c := &Customer{id: "long", age: 23}
-	fmt.Println(c)
-	c.UpdateAge(-10)
-	// fmt.Println(c)
-}
+	// khởi tạo một đối tượng gRPC service
+	grpcServer := grpc.NewServer()
 
-type Customer struct {
-	mutex sync.RWMutex
-	id    string
-	age   int
-}
+	// đăng ký service với grpcServer (của gRPC plugin)
+	RegisterHelloServiceServer(grpcServer, new(HelloServiceImpl))
 
-func (c *Customer) UpdateAge(age int) error {
-	c.mutex.Lock()
-	defer func() {
-		fmt.Println("dong khoa")
-		c.mutex.Unlock()
-	}()
-
-	var er error
-
-	if age < 0 {
-		er = fmt.Errorf("age should be positive for customer %v", c) // deadlock here: c call String() has lock
+	// cung cấp gRPC service trên port `1234`
+	lis, err := net.Listen("tcp", ":1234")
+	if err != nil {
+		log.Fatal(err)
 	}
-
-	c.age = age
-
-	return er
-}
-
-func (c *Customer) String() string {
-	c.mutex.RLock()
-	defer c.mutex.RUnlock()
-
-	return fmt.Sprintf("id %s, age %d", c.id, c.age)
+	grpcServer.Serve(lis)
 }
